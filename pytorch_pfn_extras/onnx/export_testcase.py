@@ -166,6 +166,7 @@ def export_testcase(
     used_input_index_list = [
         input_names.index(input.name) for input in onnx_graph.graph.input]
     input_names = [input_names[i] for i in used_input_index_list]
+    args = list(args)
     args = [args[i] for i in used_input_index_list]
 
     output_path = os.path.join(out_dir, 'model.onnx')
